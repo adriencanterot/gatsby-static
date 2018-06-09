@@ -1,0 +1,43 @@
+{
+    // Utilisez IntelliSense pour en savoir plus sur les attributs possibles.
+    // Pointez pour afficher la description des attributs existants.
+    // Pour plus d'informations, visitez : https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "name": "Gatsby Develop",
+            "type": "node",
+            "request": "launch",
+            "protocol": "inspector",
+            "program": "${workspaceRoot}/node_modules/.bin/gatsby",
+            "args": ["develop", "-p", "8001"],
+            "stopOnEntry": false,
+            "cwd": "${workspaceRoot}",
+            "preLaunchTask": null,
+            "runtimeExecutable": null,
+            "runtimeArgs": [
+            "--nolazy"
+            ],
+            "env": {
+                "NODE_ENV": "development",
+                "DEBUG": "gatsby:*"
+            },
+            "console": "integratedTerminal",
+            "sourceMaps": true,
+            "outFiles": []
+        },
+        {
+            "type": "node",
+            "request": "attach",
+            "name": "Attach by Process ID",
+            "processId": "${command:PickProcess}"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Lancer le programme",
+            "program": "${file}"
+        }
+    ]
+}
