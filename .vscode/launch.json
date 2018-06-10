@@ -14,7 +14,7 @@
             "args": ["develop", "-p", "8001"],
             "stopOnEntry": false,
             "cwd": "${workspaceRoot}",
-            "preLaunchTask": null,
+            "preLaunchTask": "removeCache",
             "runtimeExecutable": null,
             "runtimeArgs": [
             "--nolazy"

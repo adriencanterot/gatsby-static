@@ -29,16 +29,10 @@ exports.onCreateNode = ({node, getNode, boundActionCreators}) => {
         let markdownAST = makeMarkdownAST(rawMarkdownBody)
         visit(markdownAST, `yaml`, local => node.frontmatter = local.data.parsedValue)
         remove(markdownAST, `yaml`)
+        markdownAST.children.shift()
 
         rawMarkdownBody = makeRawMardown(markdownAST)
-        let content = makeHTML(rawMarkdownBody)
-        
-        createNodeField({
-            node,
-            name: 'extrahtml',
-            value: content
-        })
-
+        node.internal.content = rawMarkdownBody
 
     }
 }
